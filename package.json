@@ -1,0 +1,16 @@
+{
+  "name": "blogr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./style.css -o ./dist/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "i": "^0.3.7",
+    "tailwindcss": "^3.3.1"
+  }
+}
