@@ -11,51 +11,102 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Play&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        .attribution { font-size: 11px; text-align: center; }
+        .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
 </head>
 <body>
-    <nav class="flex flex-row justify-between items-center py-12 px-24 h-14 bg-gradient-to-r from-[hsl(13,100%,72%)] to-[hsl(353,100%,62%)] text-[hsl(0,0%,100%)]">
-        <div class="flex items-center space-x-16">
-            <img src="./images/logo.svg" alt="blogr" class="h-[40px]">
-        <div>
-            <ul class="flex space-x-12">
-                <li>Product</li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                  </svg>
-                <li>Company</li>
-                <li>Connect</li>
-            </ul>
-        </div>
-        </div>
+    <header class="bg-gradient-to-r from-[hsl(13,100%,72%)] to-[hsl(353,100%,62%)]">
+        <nav class="p-5 bg-gradient-to-r from-[hsl(13,100%,72%)] to-[hsl(353,100%,62%)] shadow md:flex md:items-center md:justify-between">
+            <div class="flex justify-between items-center ">
+              <span class="text-2xl font-[Poppins] cursor-pointer">
+                <img class="h-10 inline"
+                src="./images/logo.svg" alt="blogr">
+               
+              </span>
         
-        <div class="space-x-6">
-            <button class="">login</button>
-            <button class="border rounded-full py-3 px-3 hover:bg">sign up</button>
-        </div>
-    </nav>
-
-    <main>
-        <div class="border-b-1 border-b rounded-bl-[100px] bg-gradient-to-r from-[hsl(13,100%,72%)] to-[hsl(353,100%,62%)] text-[hsl(0,0%,100%)]">
-            <h3 class="flex justify-center items-center py-7">A modern publishing platform</h3>
-            <p class="flex justify-center items-center py-7">Grow your audience and build your online brand</p>
-            <div class="flex flex-row justify-center items-center space-x-4 py-7">
-                <button class="border rounded-full py-3 px-3">Start for Free</button>
-                <button class="border rounded-full py-3 px-3 text-[hsl(0,0%,100%)] hover:text-[hsl(13,100%,72%)] hover:bg-white">Learn More</button>
+              <span class="text-3xl text-white cursor-pointerxs mx-2 md:hidden block">
+                <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+              </span>
             </div>
-            <img src="./images/bg-pattern-intro-desktop.svg" alt="" class="h-[700px] w-[700px] relative">
+            <ul class="text-[hsl(0,0%,100%)] md:flex md:justify-between md:items-center z-[0] md:z-auto md:static absolute w-full left-56 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+              <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-slate-600 duration-500">
+                    <select class="bg-transparent">
+                        <option value="product" selected>Product</option>
+                        <option value="overview">Overview</option>
+                        <option value="pricing">Pricing</option>
+                        <option value="marketplace">Marketplace</option>
+                        <option value="features">Features</option>
+                        <option value="integrations">Integrations</option>
+                    </select>
+                </a>
+              </li>
+              <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-slate-600 duration-500">
+                    <select class="bg-transparent">
+                        <option value="company" selected>Company</option>
+                        <option value="about">About</option>
+                        <option value="team">Team</option>
+                        <option value="blog">Blog</option>
+                        <option value="careers">Careers</option>
+                    </select>
+                </a>
+              </li>
+              <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-slate-600 duration-500">
+                    <select class="bg-transparent">
+                        <option value="connect" selected>Connect</option>
+                        <option value="contact">Contact</option>
+                        <option value="newsletter">Newsletter</option>
+                        <option value="linkedin">LinkedIn</option>
+                    </select>
+                </a>
+              </li>
+              <div>
+                <button class="text-[hsl(0,0%,100%)] hover:text-[hsl(13,100%,72%)] hover:bg-white font-[Poppins] duration-500 px-6 py-2 mx-4 rounded ">
+                  Login
+                </button>
+                <button class="text-[hsl(0,0%,100%)] hover:text-[hsl(13,100%,72%)] hover:bg-white font-[Poppins] duration-500 px-6 py-2 mx-4 rounded ">
+                  Sign up
+                </button>
+              </div>
+            </ul>
+          </nav>
+    </header>
+       
+        
+        <div class="bg-gradient-to-r from-[hsl(13,100%,72%)] to-[hsl(353,100%,62%)] border-b-1 border-b rounded-bl-[100px] text-[hsl(0,0%,100%)]">
+            <div >
+                <h1 class="flex justify-center items-center py-7">A modern publishing platform</h1>
+                <p class="flex justify-center items-center py-7">Grow your audience and build your online brand</p>
+            </div>
+            <div class="flex flex-row justify-center items-center space-x-4 py-7">
+                    <button class="border rounded-full py-3 px-3 hover:text-[hsl(13,100%,72%)] hover:bg-white">Start for Free</button>
+                    <button class="border rounded-full py-3 px-3 text-[hsl(0,0%,100%)] hover:text-[hsl(13,100%,72%)] hover:bg-white">Learn More</button>
+            </div>
+            
         </div>
-        <div class="">
+    </div>
+    
+
+    <main >
+        <div>
             <h4 class="text-center py-7 px-7 text-[hsl(208,49%,24%)]">Design for the future</h4>
-            <div class="flex justify-center items-center mx-40 py-9">
-                <div>
+            <div class="grid grid-cols-1 grid-rows-1 md:flex justify-center items-center md:ml-40 py-9 md:gap-56">
+                <div class="text-center">
                     <h5 class="text-[hsl(208,49%,24%)]">Introducing an extensible editor</h5>
-                    <p class="mt-6 mb-5 text-[hsl(207,13%,34%)]">
+                        <p class="mt-6 mb-5 text-[hsl(207,13%,34%)]">
                             Blogr features an exceedingly intuitive interface which lets you focus
                             on one thing: creating content. The editor supports management of multiple
                             blogs and allows easy manipulation of embeds such as images, videos, and
                             Markdown. Extensibility with plugins and themes provide easy ways to add
                             functionality or change the looks of a blog.
-                    </p>
+                        </p>
                     <h5 class="text-[hsl(208,49%,24%)]">Robust content management</h5>
                         <p class="mt-6 text-[hsl(207,13%,34%)]">
                             Flexible content management enables users to easily move through posts.
@@ -64,26 +115,26 @@
                         </p>
                     
                 </div>
-                    <img src="./images/illustration-editor-desktop.svg" alt="desktop" class="float-left w-[50%] relative bottom-7 left-[19.5rem]">
-            </div>
+                    <img src="./images/illustration-editor-desktop.svg" alt="desktop" class="w-[50%] absolute md:static md:float-right bottom-7 md:right-[21.5rem]">
+                </div>
         </div>
-        <div>
             <div class="rounded-bl-[100px] text-gray-100">
-                <div class="h-[24rem] mt-[20rem] mb-[6rem] h-44 bg-gray-700 rounded-tr-[100px] rounded-bl-[100px] overflow-visible">
-                <img src="./images/illustration-phones.svg" alt="" class="float-left relative bottom-[4.5rem] px-10  h-85">
-                    <h5 class="flex items-center text-center pt-14">State of the Art Infrastructure</h5>
-                    <p class="mt-8 ">with reliability and speed in mind, worldwide data centers provide the <br>
+                <div class="h-[23rem] md:h-[24rem] md:mt-[20rem] mb-[7rem] md:mb-[6rem] rounded-tr-[100px] rounded-bl-[100px] bg-slate-800 bg-cover bg-no-repeat md:bg-left-top" style="background-image: url(./images/bg-pattern-circles.svg)">
+                <img src="./images/illustration-phones.svg" alt="" class="md:float-left relative md:relative md:bottom-[4.5rem] md:px-10 h-[50vh] md:h-85">
+                    <h5 class="grid grid-cols-1 grid-rows-1 md:flex md:items-center pt-0.5
+                     md:pt-14">State of the Art Infrastructure</h5>
+                    <p class="md:mt-8">with reliability and speed in mind, worldwide data centers provide the <br>
                         backbone for ultra-fast connectivity. this ensures your site will load <br>
                         instantly, no matter where your readers are, keeping your site <br> competitive.
                     </p>
                 </div>
-                <div class="">
+                <div>
                     <div>
-                        <img src="./images/illustration-laptop-desktop.svg" alt="desktop" class="float-left w-[50%] relative ml-[10rem] left-[-22.5rem]">
+                        <img src="./images/illustration-laptop-desktop.svg" alt="desktop" class="md:float-left w-[50%] static md:relative ml-[10rem] left-[-22.5rem]">
                     </div>
-                    <div class="flex flex-col item-center mr-20 pt-40 pr-28 text[hsl(237, 17%, 21%)]">
+                    <div class="grid grid-cols-1 grid-rows-1 md:flex md:flex-col item-center md:mr-20 pt-10 md:pt-40 pr-28 text[hsl(237, 17%, 21%)] text-center md:text-start">
                         <h5 class="text-[hsl(208,49%,24%)]">Free, open, simple</h5>
-                        <p class="mt-6 mb-5 text-[hsl(207,13%,34%)]">
+                        <p class="mb-[5rem] mt-6 md:mb-5 text-[hsl(208,49%,24%)] text-center md:text-[hsl(207,13%,34%)]">
                             Blogr is a free and open source application backed by a large
                             community of helpful developers It supports features such as code 
                             syntax highlighting. RSS feeds, social media integration, third-party 
@@ -91,7 +142,7 @@
                             architecture is clean and is relatively easy to learn.
                         </p>
                         <h5 class="text-[hsl(208,49%,24%)]">Powerful tooling</h5>
-                         <p class="mt-6 text-[hsl(207,13%,34%)]">
+                         <p class="mt-[1rem] md:mt-6 text-[hsl(207,13%,34%)]">
                                 Batteries included. We built a simple and straightforward CLI tool 
                                 that makes customization and deployment a breeze, but capable of 
                                 producing even the most complicated sites.
@@ -101,9 +152,9 @@
                     </div>
                 </div>
     </main>
-    <footer class="mt-[20.5rem] text-[hsl(240,2%,79%)] bg-[hsl(240,10%,16%)]">
+    <footer class="mt-[5rem] md:mt-[20.5rem] text-[hsl(240,2%,79%)] bg-[hsl(240,10%,16%)]">
         <div class="mt-[160px]h-72 pt-[3rem] rounded-tr-[100px]">
-            <section class="flex justify-around">
+            <div class="flex justify-around pb-6">
                 <img src="./images/logo.svg" alt="blogr" class="h-[40px]">
                 <nav>
                     <ul>
@@ -132,8 +183,24 @@
                         <li>Linkedin</li>
                     </ul>
                 </nav>
-            </section>
+            </div>
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                Coded by <a href="#">Kelubia Urubusi</a>.
+            </div>
         </div>
     </footer>
+
+    <script>
+        function Menu(e){
+            let list = document.querySelector('ul');
+    
+            e.name === 'menu' ? (e.name = "close",list.classList.
+            add('top-[80px]') , list.classList.add('opacity-100')
+            ) :( e.name = "menu" ,list.classList.remove('top-[80px]')
+            ,list.classList.remove('opacity-100'))
+        }
+      </script>
+      
 </body>
 </html>

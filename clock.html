@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="bg-gradient-to-bl from-sky-300 via-gray-100 to-current md:bg-gradient-to-bl md:from-green-200 md:via-lime-400 md:to-lime-100 h-[100dvh] w-auto m-auto ">
+    <main class="pt-36 px-20 font-serif">
+        <h2 class="text-4xl text-center bg-gradient-to-b from-lime-200 via-emerald-600 to-red-900 md:text-7xl md:font-extrabold uppercase md:bg-gradient-to-bl md:from-sky-200 md:via-orange-800 md:to-emerald-400 bg-clip-text text-transparent">Digital Clock</h2>
+        <div class="flex pt-5 md:justify-evenly md:items-center gap-7 text-[20px] md:text-[140px] md:p-10">
+            <div class="text-center bg-gradient-to-b from-lime-200 via-emerald-600 to-red-900 md:bg-gradient-to-bl md:from-sky-200 via-orange-800 md:to-emerald-400 bg-clip-text text-transparent">
+                <span id="hour">12</span>:
+                <span class="md:text-[65px] uppercase">hours</span>
+            </div>
+            <div class="text-center bg-gradient-to-b from-lime-200 via-emerald-600 to-red-900 md:bg-gradient-to-bl md:from-sky-200 md:via-orange-800 md:to-emerald-400 bg-clip-text text-transparent">
+                <span id="minute">51</span>:
+                <span class="md:text-[60px] uppercase">minutes</span>
+            </div>
+            <div class="text-center bg-gradient-to-b from-lime-200 via-emerald-600 to-red-900 md:bg-gradient-to-bl md:from-sky-200 md:via-orange-800 md:to-emerald-400 bg-clip-text text-transparent">
+                <span id="second">33</span>
+                <span class="md:text-[60px] uppercase">seconds</span>
+            </div>
+            <span id="time" class="text-orange-600">PM</span>
+            <!-- <div class="">
+                <span id="millisec"></span>
+                <span>milliseconds</span>
+            </div> -->
+        </div>
+    </main>
+
+
+
+    <script>
+        //target my element//
+        const hour = document.getElementById('hour')
+        const min = document.getElementById('minute')
+        const sec = document.getElementById('second')
+        const ampm = document.getElementById('time')
+        const mls = document.getElementById('millisec')
+
+        function updateTime(){
+            const h = new Date().getHours()
+            const m = new Date().getMinutes()
+            const s = new Date().getSeconds()
+            const ms = new Date().getMilliseconds()
+            
+            hour.textContent = h > 12 ? `0${h - 12}` : h
+            min.textContent = m
+            sec.textContent = s < 10 ? `0${s}` :s
+            ampm.textContent = h < 12 ? "AM" : "PM"
+            // mls.textContent = ms
+
+            setTimeout(() => updateTime(), 100)
+        }
+
+        updateTime()
+    </script>
+</body>
+</html>
